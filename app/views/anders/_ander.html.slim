@@ -1,0 +1,6 @@
+= turbo_frame_tag dom_id(ander), data: { controller: "display"} do
+  div data-display-target="element"  data-filter-target="house" data-houses="#{ander.houses}" style="border: 1px red solid;"
+    p = ander.name
+    p #{ander.houses} houses
+    p Connected: #{ander.connected ? 'Yes' : 'No'}
+  button data-action="display#toggle" click me and I'll disappear!
