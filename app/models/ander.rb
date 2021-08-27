@@ -2,7 +2,6 @@ class Ander < ApplicationRecord
   after_create_commit :create_stream
   after_destroy_commit :destroy_stream
 
-
   def toggle_connection
     self.update(connected: !connected)
     update_stream

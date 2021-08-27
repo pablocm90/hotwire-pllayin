@@ -1,0 +1,12 @@
+= turbo_frame_tag 'anders' do
+  div data-controller="filter"
+    = render @anders
+    div
+      input type="number" data-filter-target='number' value="10"
+    div style="display: flex;"
+      button data-action="filter#filter_bigger" filter bigger
+      button data-action="filter#filter_smaller" filter smaller
+
+    = link_to 'Really Go home', root_path, data: {"turbo-frame" => '_top'}
+
+p THis is in the index but outside turbo fram

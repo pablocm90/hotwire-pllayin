@@ -1,12 +1,13 @@
-= turbo_frame_tag 'title', target: '_top'
+= turbo_frame_tag 'title', target: 'anders' do
+  / #
   h1 here I am
-  = link_to 'click me', details_home_index_path, data: { "turbo-frame" => 'anders'}
-div
-  = turbo_stream_from 'anders'
-  = turbo_frame_tag 'anders', data: {controller: 'filter'} do
-    = render Ander.all
-    div
-      input type="number" data-filter-target='number' value="10"
-    div style="display: flex;"
-      button data-action="filter#filter_bigger" filter bigger
-      button data-action="filter#filter_smaller" filter smaller
+  = link_to 'click me (through the server)', details_home_index_path
+  / # data: { "turbo-frame" => 'anders'}
+  button data-controller="navigate not_navigate" data-action="navigate#details" Click me (through js)
+/ div.full-red-block
+
+= turbo_stream_from 'anders'
+= turbo_frame_tag 'anders', src: anders_index_path, loading: 'lazy' do
+  div style="height: 500px; border: 1px red solid"
+    p I am filler content
+

@@ -1,7 +1,16 @@
 = turbo_frame_tag 'anders' do
   h2 I will show the block
   p I give you details about the stuff you clicked
+  div
+    = link_to 'Show me anders again', anders_index_path
+  div
+    = link_to 'Fill bellow', fill_home_index_path, method: :post
+
+  = turbo_stream_from 'filler'
+  = turbo_frame_tag 'filler' do
+    p
 
 
 p But this will not be shown
+= link_to 'Really Go home', root_path
 
