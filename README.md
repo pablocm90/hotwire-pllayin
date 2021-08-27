@@ -1,24 +1,7 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Just the classic bundle, rails db:create db:migrate
+And then rails s and rails c should work.
+It'll go by default to localhost 3000.
+create an ander: Ander.create(name: 'Thom', houses: 500)
+destroy an ander: Ander.last.destroy
+toggle connected status of an ander: Ander.first.toggle_connection
+Enjoy :smile:
